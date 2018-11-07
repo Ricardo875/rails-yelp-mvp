@@ -1,14 +1,17 @@
 <div class="container">
   <h1 class="text-center">Our Restaurants</h1>
+  <br><br>
   <div class="row">
     <% @restaurants.each do |restaurant| %>
 
     <div class="col-xs-12 col-sm-4">
           <h2><%= restaurant.name %></h2>
           <p><%= restaurant.address %></p>
-
-        <%= link_to "", restaurant_path(restaurant)%>
+          <p><%= restaurant.category.capitalize %></p>
+        <%= link_to "More", restaurant_path(restaurant)%>
     </div>
     <% end %>
   </div>
+  <br><br>
+  <h4 class="text-center"><%= link_to "Add a restaurant", restaurant_path("new")%></h4>
 </div>
